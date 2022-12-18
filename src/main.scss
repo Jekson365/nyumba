@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Montserrat:wght@400&display=swap');
+
+* {
+    list-style: none;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+section {
+    background-color: #f6f8fb;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.446);
+}
+body {
+    background-color: #f6f8fb;
+}
+
+.active-bar {
+    overflow: visible;
+    transform: translateY(0);
+}
+.de-active-bar {
+    transform: translateY(-400px);
+    overflow: hidden;
+    transition: 0.3s;
+}
+.view-more {
+    border: 1px solid black;
+    padding: 10px 20px;
+    &:hover {
+        background-color: #02223b;
+        color: white;
+    }
+}
+footer {
+    background-color: #02223b !important; 
+}
+
+header {
+    .logo {
+        width: 10rem;
+    }
+    padding:15px 50px;
+    background-color: #02223b;
+
+    nav li {
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        display: flex;
+        margin: 5px 20px;
+
+        a {
+            text-decoration: none;
+            color: white !important;
+        }
+
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        .view-proprs {
+            padding: 13px 20px;
+            font-size: 12px;
+            background-color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: transparent;
+                color: white;
+            }
+        }
+
+        @media screen and (max-width:985px) {
+            .nav-item {
+                margin: 40px;
+            }
+        }
+
+        .nav-item:after {
+            position: absolute;
+            content: "";
+            width: 0%;
+            transition: 0.5s;
+            height: 2px;
+            bottom: -8px;
+            left: 0;
+            background-color: white;
+        }
+
+        .nav-item:hover:after {
+            width: 100%;
+        }
+    }
+
+    .bars {
+        display: none;
+    }
+
+    @media screen and (max-width:905px) {
+        .bars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: #02223b;
+            font-size: 15px;
+            padding: 15px;
+
+        }
+
+        .nav-bar {
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            overflow: hidden;
+            width: 100%;
+            background-color: #02223b;
+        }
+
+        @media screen and (max-width:688px) {
+            .nav-bar {
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
